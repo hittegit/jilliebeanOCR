@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -10,6 +10,12 @@ function createWindow() {
   });
 
   win.loadFile('index.html');
+
+  // Register the translation key event listener
+  globalShortcut.register('q', () => {
+    console.log('Translation key pressed');
+    // Add your translation logic here
+  });
 }
 
 app.whenReady().then(createWindow);
@@ -24,4 +30,9 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+app.on('will-quit', () => {
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll();
 });
