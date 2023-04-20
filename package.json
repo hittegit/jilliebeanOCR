@@ -1,0 +1,21 @@
+{
+  "name": "jilliebeanocr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-translate-api": "^2.3.0",
+    "jimp": "^0.22.7",
+    "robotjs": "^0.6.0",
+    "tesseract.js": "^4.0.3"
+  },
+  "devDependencies": {
+    "electron": "^24.1.2"
+  }
+}
